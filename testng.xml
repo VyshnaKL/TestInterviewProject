@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.obsquara.tests.Base"/>
-    </classes>
-  </test> <!-- Test -->
+	<listeners>
+		<listener class-name="com.obsquara.testscripts.Listeners" />
+	</listeners>
+	<parameter name="browser" value="chrome" />
+	<parameter name="username" value="admin" />
+	<parameter name="password" value="admin" />
+	<parameter name="validationMessage" value="Please fill out this field." />
+	<parameter name="inputMessage" value="FreshJuice" />
+
+
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.obsquara.testscripts.Base" />
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
+			<class name="com.obsquara.testscripts.HomePageTest" />
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
+
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

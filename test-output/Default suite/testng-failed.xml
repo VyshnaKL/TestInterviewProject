@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsquara.QALegendDemo.Base">
+      <class name="com.obsquara.testscripts.HomePageTest">
         <methods>
-          <include name="intialisebrowser"/>
-          <include name="demo"/>
+          <include name="verifySuccessfullyLogout"/>
           <include name="browserQuit"/>
+          <include name="initilizeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.QALegendDemo.Base -->
+      </class> <!-- com.obsquara.testscripts.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

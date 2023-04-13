@@ -3,6 +3,7 @@ package Utilities;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -114,6 +115,10 @@ public class PageUtility {
 		WebElement selectedValue = select.getFirstSelectedOption();
 		return (selectedValue.getText());
 
+	}
+	
+	public static List<WebElement> findRowElements(WebElement element){
+		return element.findElements(By.tagName("tr"));
 	}
 
 	public static String FirstSelectedOption(WebElement element) {
@@ -235,5 +240,9 @@ public class PageUtility {
 	public static void dragAndDrop(WebDriver driver, WebElement source, WebElement target) {
 		Actions action = new Actions(driver);
 		action.clickAndHold(source).moveToElement(target).release(target).build().perform();
+	}
+
+	public static String getValidationMessage(WebDriver driver, String name) {
+		return driver.findElement(By.name(name)).getAttribute("validationMessage");
 	}
 }
