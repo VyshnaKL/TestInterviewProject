@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="10">
+<suite name="Suite" parallel="classes" thread-count="2">
+	<parameter name="title" value="Dashboard | 7rmart supermarket" />
 	<parameter name="browser" value="chrome" />
 	<parameter name="username" value="admin" />
 	<parameter name="password" value="admin" />
+	<parameter name="password" value="admin" />
 	<parameter name="validationMessage" value="Please fill out this field." />
 	<parameter name="inputMessage" value="FreshJuice" />
-	<test thread-count="10" name="Test">
+
+
+	<test thread-count="5" name="Test">
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoTest">
+			<class name="com.obsquara.testscripts.LoginPageDemoPageTest">
 				<methods>
-					<include name="verifyApplicationLoginFailure" />
-					<include name="verifyLoginCredentialsCaseSensitive" />
 					<include name="verifyApplicationLoginSuccess" />
+					<include name="verifyLoginCredentialsCaseSensitive" />
+					<include name="verifyApplicationLoginFailure" />
 				</methods>
 			</class>
 			<class name="com.obsquara.testscripts.HomePageTest">
 				<methods>
-					<exclude name="verifySuccessfullyLogout" />
-					<include name="verifyPushUpMenuButton" />
-					<include name=" verifySelectFromDashBoard" />
+					<include name="verifySelectFromDashBoard" />
+					<include name="verifySuccessfullyLogout" />
+					<exclude name="verifyPushUpMenuButton" />
+
 				</methods>
 			</class>
 			<class name="com.obsquara.testscripts.ExpenseCategoryTest">
 				<methods>
 					<include name="verifyToAddNewTitle()" />
-					
 				</methods>
 			</class>
 

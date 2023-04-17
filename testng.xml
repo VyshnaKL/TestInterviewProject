@@ -7,7 +7,6 @@
 	<parameter name="browser" value="chrome" />
 	<parameter name="username" value="admin" />
 	<parameter name="password" value="admin" />
-	<parameter name="password" value="admin" />
 	<parameter name="validationMessage" value="Please fill out this field." />
 	<parameter name="inputMessage" value="FreshJuice" />
 

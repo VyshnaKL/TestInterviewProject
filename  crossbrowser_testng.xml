@@ -4,23 +4,29 @@
 	<parameter name="browser" value="chrome" />
 	<parameter name="username" value="admin" />
 	<parameter name="password" value="admin" />
+	<parameter name="password" value="admin" />
 	<parameter name="validationMessage" value="Please fill out this field." />
+	<parameter name="inputMessage" value="FreshJuice" />
+
 	<test thread-count="5" name="ChromeTest">
 		<classes>
 			<class name="com.obsquara.testscripts.LoginPageDemoTest">
 				<methods>
 					<include name="verifyApplicationLoginSuccess" />
+					<include name="verifyLoginCredentialsCaseSensitive" />
+					<include name="verifyApplicationLoginFailure" />
 				</methods>
 			</class>
 		</classes>
 	</test> <!-- Test -->
 	<test thread-count="5" name=" EdgeTest">
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoTest">
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest">
 				<methods>
-					<include name="verifyApplicationLoginSuccess" />
+					<include name="verifyToAddNewTitle()" />
 				</methods>
 			</class>
+
 		</classes>
 	</test> <!-- Test -->
 

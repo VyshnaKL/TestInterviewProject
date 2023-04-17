@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="10" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="password" value="admin"/>
   <parameter name="browser" value="chrome"/>
   <parameter name="validationMessage" value="Please fill out this field."/>
   <parameter name="inputMessage" value="FreshJuice"/>
   <parameter name="username" value="admin"/>
-  <listeners>
-    <listener class-name="com.obsquara.testscripts.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="10" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="com.obsquara.testscripts.HomePageTest">
+      <class name="com.obsquara.testscripts.ExpenseCategoryTest">
         <methods>
           <include name="browserQuit"/>
-          <include name="verifySelectFromDashBoard"/>
+          <include name="verifyToAddNewTitle"/>
           <include name="initilizeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.testscripts.HomePageTest -->
+      </class> <!-- com.obsquara.testscripts.ExpenseCategoryTest -->
+      <class name="com.obsquara.testscripts.LoginPageDemoTest">
+        <methods>
+          <include name="browserQuit"/>
+          <include name="verifyApplicationLoginSuccess" invocation-numbers="0"/>
+          <include name="initilizeBrowser"/>
+        </methods>
+      </class> <!-- com.obsquara.testscripts.LoginPageDemoTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

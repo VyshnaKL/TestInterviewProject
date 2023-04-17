@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="2">
+<suite name="Suite" parallel="classes" thread-count="10">
 	<test name="ChromeBrowsing">
 		<parameter name="browser" value="chrome" />
 		<parameter name="username" value="admin" />
 		<parameter name="password" value="admin" />
 		<parameter name="validationMessage" value="Please fill out this field." />
+		<parameter name="inputMessage" value="FreshJuice" />
 		<classes>
 			<class name="com.obsquara.testscripts.LoginPageDemoTest"></class>
+			<class name="com.obsquara.testscripts.HomePageTest" />
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
 		</classes>
 	</test>
 	<test name="EdgeBrowsing">
@@ -15,8 +18,11 @@
 		<parameter name="username" value="admin" />
 		<parameter name="password" value="admin" />
 		<parameter name="validationMessage" value="Please fill out this field." />
+		<parameter name="inputMessage" value="FreshJuice" />
 		<classes>
 			<class name="com.obsquara.testscripts.LoginPageDemoTest"></class>
+			<class name="com.obsquara.testscripts.HomePageTest" />
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
