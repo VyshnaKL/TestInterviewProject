@@ -8,21 +8,23 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.obsquara.pages.ExpenseCategoryPage;
+import com.obsquara.pages.LoginSuccess;
 
 import Utilities.ExcelUtility;
 import constants.Constants;
 
 public class ExpenseCategoryTest extends Base {
 	ExpenseCategoryPage expenseCategoryPage;
+	LoginSuccess loginSuccess;
 
 	@Test
 
 	@Parameters({ "inputMessage" })
 	public void verifyToAddNewTitle() throws IOException {
-		String inputMessage = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ExpenseCategoryName");
+		String inputMessage = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,"ExpenseCategoryName");
 		expenseCategoryPage = new ExpenseCategoryPage(driver);
-		expenseCategoryPage.login();
+		loginSuccess = new LoginSuccess(driver);
+		loginSuccess.login();
 		expenseCategoryPage.clickManageExpense();
 		expenseCategoryPage.clickExpenseCategory();
 		expenseCategoryPage.clickNewButton();
@@ -31,5 +33,6 @@ public class ExpenseCategoryTest extends Base {
 		expenseCategoryPage.clickSaveButton();
 		assertTrue(expenseCategoryPage.checkTitle(inputMessage), "title not found in table");
 	}
+	
 
 }

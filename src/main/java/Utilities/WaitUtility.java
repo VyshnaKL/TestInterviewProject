@@ -22,6 +22,10 @@ public class WaitUtility {
 	public static void implicitWait(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
 	}
+	
+	public static void implicitWait() throws InterruptedException {
+		Thread.sleep(5000);
+	}
 
 	public static void waitForElement(WebDriver driver, WebElement target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));

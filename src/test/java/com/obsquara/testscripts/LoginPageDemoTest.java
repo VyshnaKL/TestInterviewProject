@@ -6,7 +6,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 import com.obsquara.pages.LoginPageDemoPage;
 
 import Utilities.ExcelUtility;
-import Utilities.WaitUtility;
 import constants.Constants;
 
 public class LoginPageDemoTest extends Base {

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-17T08:00:42 IST" name="Suite" finished-at="2023-04-17T08:01:04 IST" duration-ms="22105">
+    <groups>
+    </groups>
+    <test started-at="2023-04-17T08:00:42 IST" name="Test" finished-at="2023-04-17T08:01:04 IST" duration-ms="22105">
+      <class name="com.obsquara.testscripts.ExpenseCategoryTest">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ExpenseCategoryTest@2af004b]" started-at="2023-04-17T08:01:02 IST" name="initilizeBrowser" finished-at="2023-04-17T08:01:03 IST" duration-ms="1371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifyToAddNewTitle()[pri:0, instance:com.obsquara.testscripts.ExpenseCategoryTest@2af004b]" started-at="2023-04-17T08:01:03 IST" name="verifyToAddNewTitle" finished-at="2023-04-17T08:01:04 IST" duration-ms="1275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyToAddNewTitle -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ExpenseCategoryTest@2af004b]" started-at="2023-04-17T08:01:04 IST" name="browserQuit" finished-at="2023-04-17T08:01:04 IST" duration-ms="121" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyToAddNewTitle status=SUCCESS method=ExpenseCategoryTest.verifyToAddNewTitle()[pri:0, instance:com.obsquara.testscripts.ExpenseCategoryTest@2af004b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- com.obsquara.testscripts.ExpenseCategoryTest -->
+      <class name="com.obsquara.testscripts.HomePageTest">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:50 IST" name="initilizeBrowser" finished-at="2023-04-17T08:00:51 IST" duration-ms="1421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifyPushUpMenuButton()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:51 IST" name="verifyPushUpMenuButton" finished-at="2023-04-17T08:00:52 IST" duration-ms="630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPushUpMenuButton -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:52 IST" name="browserQuit" finished-at="2023-04-17T08:00:52 IST" duration-ms="114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPushUpMenuButton status=SUCCESS method=HomePageTest.verifyPushUpMenuButton()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:52 IST" name="initilizeBrowser" finished-at="2023-04-17T08:00:53 IST" duration-ms="1421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifySelectFromDashBoard()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:53 IST" name="verifySelectFromDashBoard" finished-at="2023-04-17T08:00:59 IST" duration-ms="5935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySelectFromDashBoard -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:59 IST" name="browserQuit" finished-at="2023-04-17T08:00:59 IST" duration-ms="119" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySelectFromDashBoard status=SUCCESS method=HomePageTest.verifySelectFromDashBoard()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:00:59 IST" name="initilizeBrowser" finished-at="2023-04-17T08:01:01 IST" duration-ms="1447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifySuccessfullyLogout()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:01:01 IST" name="verifySuccessfullyLogout" finished-at="2023-04-17T08:01:02 IST" duration-ms="826" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfullyLogout -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17]" started-at="2023-04-17T08:01:02 IST" name="browserQuit" finished-at="2023-04-17T08:01:02 IST" duration-ms="122" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySuccessfullyLogout status=SUCCESS method=HomePageTest.verifySuccessfullyLogout()[pri:0, instance:com.obsquara.testscripts.HomePageTest@27406a17] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- com.obsquara.testscripts.HomePageTest -->
+      <class name="com.obsquara.testscripts.LoginPageDemoTest">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:42 IST" name="initilizeBrowser" finished-at="2023-04-17T08:00:45 IST" duration-ms="2269" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifyApplicationLoginSuccess(java.lang.String,java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:45 IST" name="verifyApplicationLoginSuccess" finished-at="2023-04-17T08:00:46 IST" duration-ms="1101" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyApplicationLoginSuccess -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:46 IST" name="browserQuit" finished-at="2023-04-17T08:00:46 IST" duration-ms="124" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyApplicationLoginSuccess status=SUCCESS method=LoginPageDemoTest.verifyApplicationLoginSuccess(java.lang.String,java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:46 IST" name="initilizeBrowser" finished-at="2023-04-17T08:00:47 IST" duration-ms="1405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifytheSignInButton(java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:47 IST" name="verifytheSignInButton" finished-at="2023-04-17T08:00:47 IST" duration-ms="117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Please fill out this field.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifytheSignInButton -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:47 IST" name="browserQuit" finished-at="2023-04-17T08:00:48 IST" duration-ms="128" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifytheSignInButton status=SUCCESS method=LoginPageDemoTest.verifytheSignInButton(java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:48 IST" name="initilizeBrowser" finished-at="2023-04-17T08:00:49 IST" duration-ms="1628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifyApplicationLoginFailure(java.lang.String,java.lang.String)[pri:1, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:49 IST" name="verifyApplicationLoginFailure" data-provider="LoginProvider" finished-at="2023-04-17T08:00:50 IST" duration-ms="369" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Vyshna]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[V123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyApplicationLoginFailure -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8]" started-at="2023-04-17T08:00:50 IST" name="browserQuit" finished-at="2023-04-17T08:00:50 IST" duration-ms="125" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyApplicationLoginFailure status=SUCCESS method=LoginPageDemoTest.verifyApplicationLoginFailure(java.lang.String,java.lang.String)[pri:1, instance:com.obsquara.testscripts.LoginPageDemoTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- com.obsquara.testscripts.LoginPageDemoTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

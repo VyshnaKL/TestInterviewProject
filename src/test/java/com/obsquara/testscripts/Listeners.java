@@ -1,8 +1,6 @@
 
 package com.obsquara.testscripts;
 
-import java.io.IOException;
-import java.util.*;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

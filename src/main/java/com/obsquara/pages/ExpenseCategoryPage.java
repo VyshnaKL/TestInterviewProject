@@ -1,19 +1,13 @@
 package com.obsquara.pages;
 
-import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.ExcelUtility;
 import Utilities.PageUtility;
-import constants.Constants;
 
 public class ExpenseCategoryPage {
 	WebDriver driver;
@@ -23,8 +17,6 @@ public class ExpenseCategoryPage {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	LoginPageDemoPage loginPageDemoPage;
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newButtonOption;
@@ -83,15 +75,6 @@ public class ExpenseCategoryPage {
 	public boolean saveButtonisEnabled() {
 
 		return PageUtility.isElementEnabled(saveButton);
-	}
-
-	public void login() throws IOException {
-		loginPageDemoPage = new LoginPageDemoPage(driver);
-		String username = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginCredentials");
-		String password = ExcelUtility.getString(0, 1, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginCredentials");
-		loginPageDemoPage.enterNameInUsernameField(username);
-		loginPageDemoPage.enterTextInPasswordField(password);
-		loginPageDemoPage.clickSignInButton();
 	}
 	
 	public boolean checkTitle(String title) {

@@ -5,8 +5,8 @@
     <classes>
       <class name="com.obsquara.testscripts.HomePageTest">
         <methods>
-          <include name="verifySuccessfullyLogout"/>
           <include name="browserQuit"/>
+          <include name="verifySelectFromDashBoard"/>
           <include name="initilizeBrowser"/>
         </methods>
       </class> <!-- com.obsquara.testscripts.HomePageTest -->

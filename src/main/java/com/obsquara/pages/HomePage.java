@@ -1,15 +1,11 @@
 package com.obsquara.pages;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.ExcelUtility;
 import Utilities.PageUtility;
-import constants.Constants;
 
 public class HomePage {
 	WebDriver driver;
@@ -19,8 +15,6 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	LoginPageDemoPage loginPageDemoPage;
 
 	@FindBy(xpath = "//a[@class='dropdown-item'][2]")
 	WebElement logoutButtonOption;
@@ -56,13 +50,4 @@ public class HomePage {
 		return PageUtility.isDisplay(menuList);
 	}
 	
-	public void login() throws IOException {
-		loginPageDemoPage = new LoginPageDemoPage(driver);
-		String username = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginCredentials");
-		String password = ExcelUtility.getString(0, 1, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginCredentials");
-		loginPageDemoPage.enterNameInUsernameField(username);
-		loginPageDemoPage.enterTextInPasswordField(password);
-		loginPageDemoPage.clickSignInButton();
-	}
-
 }
