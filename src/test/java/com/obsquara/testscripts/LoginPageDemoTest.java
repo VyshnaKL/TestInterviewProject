@@ -40,6 +40,7 @@ public class LoginPageDemoTest extends Base {
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 
+	@Test
 	@Parameters({ "username", "password" })
 	public void verifyLoginCredentialsCaseSensitive(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
@@ -49,6 +50,20 @@ public class LoginPageDemoTest extends Base {
 		loginPageDemoPage.clickSignInButton();
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
+	
+	@Test
+	@Parameters({ "username", "password" })
+	public void verifyLoginPasswordCaseSensitive(String username, String password) throws IOException {
+		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
+		loginPageDemoPage = new LoginPageDemoPage(driver);
+		loginPageDemoPage.enterNameInUsernameField(username);
+		loginPageDemoPage.enterTextInPasswordField(password.toUpperCase());
+		loginPageDemoPage.clickSignInButton();
+		assertFalse(driver.getCurrentUrl().equals(expectedUrl),
+				"Invalid Username/Password");
+		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Alert box message not displayed");
+	}
+
 
 	@Test(dataProvider = "LoginProvider", priority = 1)
 	public void verifyApplicationLoginFailure(String username, String password) throws IOException {

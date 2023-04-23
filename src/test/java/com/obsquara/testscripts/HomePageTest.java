@@ -1,4 +1,4 @@
-package com.obsquara.testscripts;
+                      package com.obsquara.testscripts;
 
 import static org.testng.Assert.assertTrue;
 
@@ -48,7 +48,6 @@ public class HomePageTest extends Base {
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObject = new DashBoardMenuList(driver);
 		DashBoardMenuListObject.navigateToPages("Manage Expense");
-		WaitUtility.implicitWait();
 		DashBoardMenuListObject.navigateToPages("Expense Category");
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}

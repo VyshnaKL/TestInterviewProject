@@ -14,6 +14,13 @@ public class PageUtility {
 	public static void clickOnElement(WebElement element) {
 		element.click();
 	}
+	
+	public static void ScrollAndClickOnElement(WebElement element, WebDriver driver) {
+		Actions builder = new Actions(driver);
+		builder.moveToElement(element);
+		builder.click();
+		builder.build().perform();
+	}
 
 	public static boolean isEnabled(WebElement element) {
 		boolean status = element.isEnabled();
@@ -24,13 +31,15 @@ public class PageUtility {
 		boolean status = element.isDisplayed();
 		return status;
 	}
-
+	
 	public static WebElement enterText(WebElement element, String value) {
+		element.clear();
 		element.sendKeys(value);
 		return element;
 	}
 
 	public static void sendKey(WebElement element, String s) {
+		element.clear();
 		element.sendKeys(s);
 	}
 
