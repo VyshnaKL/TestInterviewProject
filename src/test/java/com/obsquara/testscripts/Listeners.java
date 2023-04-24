@@ -1,17 +1,16 @@
 
 package com.obsquara.testscripts;
 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import Utilities.ExtentReportUtility;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import Utilities.ExtentReportUtility;
 
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;

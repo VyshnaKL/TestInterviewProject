@@ -34,11 +34,11 @@ public class SettingTest extends Base {
 		DashBoardMenuListObj.navigateToPages(
 				ExcelUtility.getString(9, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
 		settingPage = new SettingPage(driver);
-		settingPage.clickChangePassword().enterOldPassword(oldpassword).enterNewPassword(newpassword).enterConfirmPassword(confirmpassword).clickChangeButton();
-		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Logout not successfully and Not redirected to Login  Page");
-		
-		
+		settingPage.clickChangePassword().enterOldPassword(oldpassword).enterNewPassword(newpassword)
+				.enterConfirmPassword(confirmpassword).clickChangeButton();
+		assertTrue(driver.getCurrentUrl().equals(expectedUrl),
+				"Logout not successfully and Not redirected to Login  Page");
+
 	}
-	
-       
+
 }

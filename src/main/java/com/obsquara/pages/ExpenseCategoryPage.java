@@ -111,9 +111,9 @@ public class ExpenseCategoryPage {
 		return this;
 	}
 
-	public ExpenseCategoryPage  enterTitleField(String input) {
-		 PageUtility.enterText(titleTextField, input);
-		 return this;
+	public ExpenseCategoryPage enterTitleField(String input) {
+		PageUtility.enterText(titleTextField, input);
+		return this;
 	}
 
 	public boolean saveButtonisEnabled() {

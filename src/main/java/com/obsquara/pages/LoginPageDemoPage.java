@@ -33,8 +33,8 @@ public class LoginPageDemoPage {
 	WebElement rememberMe;
 
 	public LoginPageDemoPage enterNameInUsernameField(String input) {
-		 PageUtility.enterText(usenameFieldTextBox, input);
-		 return this;
+		PageUtility.enterText(usenameFieldTextBox, input);
+		return this;
 	}
 
 	public LoginPageDemoPage enterTextInPasswordField(String input) {

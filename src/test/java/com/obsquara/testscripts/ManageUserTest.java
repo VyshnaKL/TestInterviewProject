@@ -32,6 +32,5 @@ public class ManageUserTest extends Base {
 		manageUserPage.clickonPasswordDetailElement();
 		assertTrue(manageUserPage.isDisplayedResultPassword(), " the passwrd not dispalyed");
 	}
-	
-	
+
 }

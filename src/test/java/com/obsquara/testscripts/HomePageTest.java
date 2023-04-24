@@ -46,8 +46,10 @@ public class HomePageTest extends Base {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(2, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
-		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(10, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(
+				ExcelUtility.getString(2, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(
+				ExcelUtility.getString(10, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 

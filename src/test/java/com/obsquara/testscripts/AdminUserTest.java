@@ -19,7 +19,7 @@ public class AdminUserTest extends Base {
 	AdminUserPage adminUserPage;
 	LoginSuccess loginSuccess;
 
-	@Test(retryAnalyzer = Retry.class,dataProvider = "LoginProvider")
+	@Test(retryAnalyzer = Retry.class, dataProvider = "LoginProvider")
 	public void verifyNewAdminUser(String username, String password) throws IOException {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();

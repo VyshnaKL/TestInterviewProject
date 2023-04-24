@@ -26,20 +26,21 @@ public class PushNotificationPage {
 
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement sendButton;
-	
+
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMessageBox;
 
 	public PushNotificationPage enterTitleField(String input) {
-		 PageUtility.enterText(titleField, input);
-		 return this;
+		PageUtility.enterText(titleField, input);
+		return this;
 	}
 
 	public PushNotificationPage enterDescriptionField(String input) {
 		PageUtility.enterText(descriptionField, input);
-		return  this;
+		return this;
 
 	}
+
 	public PushNotificationPage clickonPushNotification() {
 		PageUtility.clickOnElement(pushNotification);
 		return this;
@@ -47,19 +48,19 @@ public class PushNotificationPage {
 
 	public PushNotificationPage clickSendButton() {
 		PageUtility.clickOnElement(sendButton);
-		return  this;
+		return this;
 	}
-	
+
 	public boolean isTitleFieldDisplayed() {
 		return PageUtility.isDisplay(titleField);
 	}
-	
+
 	public boolean isDescriptionFieldDisplayed() {
 		return PageUtility.isDisplay(descriptionField);
 	}
+
 	public boolean isAlertMessageDisplayed() {
 		return PageUtility.isDisplay(alertMessageBox);
 	}
-
 
 }

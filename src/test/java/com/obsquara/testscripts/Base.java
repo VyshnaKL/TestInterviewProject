@@ -1,4 +1,4 @@
- package com.obsquara.testscripts;
+package com.obsquara.testscripts;
 
 import java.io.FileInputStream;
 import java.io.IOException;
