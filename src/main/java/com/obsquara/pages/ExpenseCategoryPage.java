@@ -60,55 +60,60 @@ public class ExpenseCategoryPage {
 	@FindBy(xpath = "//button[@name='Update']")
 	WebElement updateButton;
 
-	public void clickSearchButton() {
+	public ExpenseCategoryPage clickSearchButton() {
 		PageUtility.clickOnElement(searchButton);
+		return this;
 
 	}
 
-	public void clickRedSearchButton() {
+	public ExpenseCategoryPage clickRedSearchButton() {
 		PageUtility.clickOnElement(redSearchButton);
-
+		return this;
 	}
 
-	public void clickNewButton() {
+	public ExpenseCategoryPage clickNewButton() {
 		PageUtility.clickOnElement(newButtonOption);
-
+		return this;
 	}
 
-	public void clickHomeButton() {
+	public ExpenseCategoryPage clickHomeButton() {
 		PageUtility.clickOnElement(homeOption);
-
+		return this;
 	}
 
-	public void clickSaveButton() {
+	public ExpenseCategoryPage clickSaveButton() {
 		PageUtility.clickOnElement(saveButton);
-
+		return this;
 	}
 
-	public void clickManageExpense() {
+	public ExpenseCategoryPage clickManageExpense() {
 		PageUtility.clickOnElement(manageExpense);
-
+		return this;
 	}
 
-	public void clickExpenseCategory() {
+	public ExpenseCategoryPage clickExpenseCategory() {
 		PageUtility.clickOnElement(expenseCategory);
+		return this;
 	}
 
-	public void clickDeleteButton() {
+	public ExpenseCategoryPage clickDeleteButton() {
 		PageUtility.clickOnElement(deleteButton);
+		return this;
 	}
 
-	public void clickEditButton() {
+	public ExpenseCategoryPage clickEditButton() {
 		PageUtility.clickOnElement(editButton);
+		return this;
 	}
 
-	public void clickUpdateButton() {
+	public ExpenseCategoryPage clickUpdateButton() {
 		PageUtility.clickOnElement(updateButton);
+		return this;
 	}
 
-	public WebElement enterTitleField(String input) {
-
-		return PageUtility.enterText(titleTextField, input);
+	public ExpenseCategoryPage  enterTitleField(String input) {
+		 PageUtility.enterText(titleTextField, input);
+		 return this;
 	}
 
 	public boolean saveButtonisEnabled() {
@@ -120,8 +125,9 @@ public class ExpenseCategoryPage {
 		return PageUtility.isDisplay(alertBox);
 	}
 
-	public WebElement enterSearchTitle(String input) {
-		return PageUtility.enterText(searchTitle, input);
+	public ExpenseCategoryPage enterSearchTitle(String input) {
+		PageUtility.enterText(searchTitle, input);
+		return this;
 	}
 
 	public boolean checkTitle(String title) {
@@ -142,7 +148,7 @@ public class ExpenseCategoryPage {
 		driver.switchTo().alert().accept();
 
 	}
-	
+
 	public void addExpenseCategory(String title) {
 		clickExpenseCategory();
 		clickNewButton();

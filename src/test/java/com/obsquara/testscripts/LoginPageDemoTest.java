@@ -20,7 +20,7 @@ public class LoginPageDemoTest extends Base {
 	LoginPageDemoPage loginPageDemoPage;
 
 	@Parameters({"validationMessage"})
-	@Test
+	@Test(retryAnalyzer = Retry.class)
 	public void verifytheSignInButton(String validationMessage) {
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.clickSignInButton();
@@ -28,30 +28,25 @@ public class LoginPageDemoTest extends Base {
 		assertEquals(message,validationMessage, "Validation messages doesn't match");
 	}
 
-	@Test
-
+	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyApplicationLoginSuccess(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
-		loginPageDemoPage.enterNameInUsernameField(username);
-		loginPageDemoPage.enterTextInPasswordField(password);
-		loginPageDemoPage.clickSignInButton();
+		loginPageDemoPage.enterNameInUsernameField(username).enterTextInPasswordField(password).clickSignInButton();
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 
-	@Test
+	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginCredentialsCaseSensitive(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
-		loginPageDemoPage.enterNameInUsernameField(username.toUpperCase());
-		loginPageDemoPage.enterTextInPasswordField(password);
-		loginPageDemoPage.clickSignInButton();
+		loginPageDemoPage.enterNameInUsernameField(username.toUpperCase()).enterTextInPasswordField(password).clickSignInButton();
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 	
-	@Test
+	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginPasswordCaseSensitive(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
@@ -59,21 +54,17 @@ public class LoginPageDemoTest extends Base {
 		loginPageDemoPage.enterNameInUsernameField(username);
 		loginPageDemoPage.enterTextInPasswordField(password.toUpperCase());
 		loginPageDemoPage.clickSignInButton();
-		assertFalse(driver.getCurrentUrl().equals(expectedUrl),
-				"Invalid Username/Password");
+		assertFalse(driver.getCurrentUrl().equals(expectedUrl),"Invalid Username/Password");
 		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Alert box message not displayed");
 	}
 
 
-	@Test(dataProvider = "LoginProvider", priority = 1)
+	@Test(retryAnalyzer = Retry.class,dataProvider = "LoginProvider", priority = 1)
 	public void verifyApplicationLoginFailure(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
-		loginPageDemoPage.enterNameInUsernameField(username);
-		loginPageDemoPage.enterTextInPasswordField(password);
-		loginPageDemoPage.clickSignInButton();
-		assertFalse(driver.getCurrentUrl().equals(expectedUrl),
-				"Invalid Username/Password");
+		loginPageDemoPage.enterNameInUsernameField(username).enterTextInPasswordField(password).clickSignInButton();
+		assertFalse(driver.getCurrentUrl().equals(expectedUrl),"Invalid Username/Password");
 		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Alert box message not displayed");
 	}
 

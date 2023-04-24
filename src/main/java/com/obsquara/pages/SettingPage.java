@@ -67,31 +67,38 @@ public class SettingPage {
 	
 	
 	
-	public WebElement enterOldPassword(String input) {
-		return PageUtility.enterText(oldPassword, input);
+	public SettingPage enterOldPassword(String input) {
+		 PageUtility.enterText(oldPassword, input);
+		 return this;
 	}
-	public WebElement enterNewPassword(String input) {
-		return PageUtility.enterText(newPassword, input);
+	public SettingPage enterNewPassword(String input) {
+		 PageUtility.enterText(newPassword, input);
+		 return this;
 	}
-	public WebElement enterConfirmPassword(String input) {
-		return PageUtility.enterText(confirmPassword, input);
+	public SettingPage enterConfirmPassword(String input) {
+		 PageUtility.enterText(confirmPassword, input);
+		 return this;
 	}
-	public void clickChangeButton(){
-		PageUtility.clickOnElement(changeButton);			
+	public SettingPage clickChangeButton(){
+		PageUtility.clickOnElement(changeButton);
+		 return this;
 	}
 	
-	public void clickChangePassword(){
-		PageUtility.clickOnElement(changePassword);			
+	public SettingPage clickChangePassword(){
+		PageUtility.clickOnElement(changePassword);	
+		 return this;
 	}
 	public boolean confirmationDisplayed() {
 		return PageUtility.isDisplay(confirmPassword);
 	}
-	public void clickManageMenu(){
-		PageUtility.clickOnElement(manageMenu);			
+	public SettingPage clickManageMenu(){
+		PageUtility.clickOnElement(manageMenu);	
+		 return this;
 	}
 	
-	public void clickNewButton() {
+	public SettingPage clickNewButton() {
 		PageUtility.clickOnElement(newButtonOption);
+		 return this;
 
 	}
 

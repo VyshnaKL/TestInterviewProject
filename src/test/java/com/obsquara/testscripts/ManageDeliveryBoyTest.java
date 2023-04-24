@@ -5,8 +5,6 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.obsquara.pages.DashBoardMenuList;
@@ -22,7 +20,7 @@ public class ManageDeliveryBoyTest extends Base {
 	ManageDeliveryBoyPage manageDeliveryBoyPage;
 	LoginSuccess loginSuccess;
 
-	@Test(priority = 1)
+	@Test(retryAnalyzer = Retry.class,priority = 1)
 	public void verifyToAddNewDeliveryBoy() throws IOException, InterruptedException {
 
 		String name = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
@@ -49,12 +47,13 @@ public class ManageDeliveryBoyTest extends Base {
 		manageDeliveryBoyPage.enterAddressField(address);
 		manageDeliveryBoyPage.enterUserNameField(deliveryusername);
 		manageDeliveryBoyPage.enterPasswordField(deliverypassword);
+		manageDeliveryBoyPage.scrollToBottom();
 		manageDeliveryBoyPage.clickSaveButton();
 		assertTrue(manageDeliveryBoyPage.checkTitle(name), "title not found in table");
 
 	}
 
-	@Test(priority = 2)
+	@Test(retryAnalyzer = Retry.class,priority = 2)
 	public void verifySearchDeliveryBoy() throws IOException, InterruptedException {
 		String searchName = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
 				"ManageDeliveryBoy");
@@ -69,7 +68,7 @@ public class ManageDeliveryBoyTest extends Base {
 		assertTrue(manageDeliveryBoyPage.checkTitle(searchName), "title not found in table");
 	}
 
-	@Test(priority = 4)
+	@Test(retryAnalyzer = Retry.class,priority = 4)
 	public void verifyEditDeliveryBoy() throws IOException, InterruptedException {
 
 		String name = ExcelUtility.getString(0, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
@@ -112,26 +111,28 @@ public class ManageDeliveryBoyTest extends Base {
 		manageDeliveryBoyPage.enterAddress(editAddress);
 		manageDeliveryBoyPage.enterUsername(deliveryusername);
 		manageDeliveryBoyPage.enterPassword(deliverypassword);
+		manageDeliveryBoyPage.scrollToBottom();
 		manageDeliveryBoyPage.clickUpdateButton();
+		
 		assertTrue(manageDeliveryBoyPage.checkTitle(editName), "Edited Name not found in table");
 		assertTrue(manageDeliveryBoyPage.checkTitle(editEmail), "Edited Email not found in table");
-		//assertTrue(manageDeliveryBoyPage.checkTitle(editAddress), "Edited Address not found in table");
+		// assertTrue(manageDeliveryBoyPage.checkTitle(editAddress), "Edited Address not found in table");
 		assertTrue(manageDeliveryBoyPage.checkTitle(deliveryusername), "username not found in table");
 		assertTrue(manageDeliveryBoyPage.checkTitle(deliverypassword), "password not found in table");
 		assertTrue(manageDeliveryBoyPage.isAlertMessageDisplayed(), "alert box not displayed");
 
 		manageDeliveryBoyPage.deleteDeliveryBoy(editName);
-
 	}
 
-	@Test(priority = 3)
+	@Test(retryAnalyzer = Retry.class,priority = 3)
 	public void verifyDeleteDeliveryBoy() throws IOException, InterruptedException {
 		String searchName = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
 				"ManageDeliveryBoy");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages("Manage Delivery Boy");
+		DashBoardMenuListObj.navigateToPages(
+				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickSearchButton();
 		manageDeliveryBoyPage.enterSearchName(searchName);
@@ -142,12 +143,13 @@ public class ManageDeliveryBoyTest extends Base {
 		assertTrue(manageDeliveryBoyPage.isAlertMessageDisplayed(), "alert box not displayed");
 	}
 
-	@Test(priority = 5)
+	@Test(retryAnalyzer = Retry.class,priority = 5)
 	public void verifyResetButton() throws IOException, InterruptedException {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages("Manage Delivery Boy");
+		DashBoardMenuListObj.navigateToPages(
+				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickSearchButton();
 		manageDeliveryBoyPage.clickResetButton();

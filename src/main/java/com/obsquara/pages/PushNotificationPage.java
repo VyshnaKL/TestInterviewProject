@@ -30,22 +30,24 @@ public class PushNotificationPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMessageBox;
 
-	public WebElement enterTitleField(String input) {
-
-		return PageUtility.enterText(titleField, input);
+	public PushNotificationPage enterTitleField(String input) {
+		 PageUtility.enterText(titleField, input);
+		 return this;
 	}
 
-	public WebElement enterDescriptionField(String input) {
-
-		return PageUtility.enterText(descriptionField, input);
+	public PushNotificationPage enterDescriptionField(String input) {
+		PageUtility.enterText(descriptionField, input);
+		return  this;
 
 	}
-	public void clickonPushNotification() {
+	public PushNotificationPage clickonPushNotification() {
 		PageUtility.clickOnElement(pushNotification);
+		return this;
 	}
 
-	public void clickSendButton() {
+	public PushNotificationPage clickSendButton() {
 		PageUtility.clickOnElement(sendButton);
+		return  this;
 	}
 	
 	public boolean isTitleFieldDisplayed() {

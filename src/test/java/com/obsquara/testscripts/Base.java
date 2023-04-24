@@ -1,4 +1,4 @@
-package com.obsquara.testscripts;
+ package com.obsquara.testscripts;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,12 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-
 
 import Utilities.ScreenShotUtility;
 import Utilities.WaitUtility;
@@ -57,36 +55,16 @@ public class Base {
 
 		}
 		if (browser.equalsIgnoreCase("firefox")) {
-
-			/*System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + constants.Constants.FIREFOXDRIVERFILE);
-			driver = new FirefoxDriver();*/
 			driver = WebDriverManager.firefoxdriver().create();
-		}
-
-		else if (browser.equalsIgnoreCase("chrome")) {
-
-			/*System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + constants.Constants.CHROMEDRIVERFILE);
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
-			driver = new ChromeDriver(options);*/
+		} else if (browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().capabilities(chromeOptions).create();
 			driver = new ChromeDriver(chromeOptions);
-		}
-
-		else if (browser.equalsIgnoreCase("Edge")) {
-
-			/*System.setProperty("webdriver.edge.driver",
-					System.getProperty("user.dir") + constants.Constants.EDGEDRIVERFILE);
-			EdgeOptions options = new EdgeOptions();
-			options.addArguments("--remote-allow-origins=*");
-			driver = new EdgeDriver(options);*/
+		} else if (browser.equalsIgnoreCase("Edge")) {
 			EdgeOptions edgeOptions = new EdgeOptions();
 			edgeOptions.addArguments("--remote-allow-origins=*");
-			WebDriverManager.edgedriver().create();
+			WebDriverManager.edgedriver().capabilities(edgeOptions).create();
 			driver = new EdgeDriver(edgeOptions);
 		} else {
 			throw new Exception("Browser is not correct");
@@ -107,6 +85,5 @@ public class Base {
 
 		driver.quit();
 	}
-	
-	
+
 }

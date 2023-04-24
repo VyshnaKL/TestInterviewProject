@@ -18,17 +18,15 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[@class='dropdown-item'][2]")
 	WebElement logoutButtonOption;
-	
+
 	@FindBy(xpath = "//a[@data-toggle='dropdown']")
 	WebElement adminLogo;
 
 	@FindBy(xpath = "//a[@data-widget='pushmenu']")
 	WebElement pushupMenu;
 
-	//@FindBy(xpath = "//div[@class='os-content']")
 	@FindBy(xpath = "//a[@class='brand-link navbar-dark']")
 	WebElement menuList;
-	
 
 	public void clickLogoutButton() {
 		PageUtility.clickOnElement(logoutButtonOption);
@@ -37,7 +35,7 @@ public class HomePage {
 	public void clickAdminLogo() {
 		PageUtility.clickOnElement(adminLogo);
 	}
-	
+
 	public void clickPushupMenu() {
 		PageUtility.clickOnElement(pushupMenu);
 	}
@@ -49,5 +47,5 @@ public class HomePage {
 	public boolean menuListDisplayed() {
 		return PageUtility.isDisplay(menuList);
 	}
-	
+
 }

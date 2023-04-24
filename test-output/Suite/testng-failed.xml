@@ -11,13 +11,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsquara.testscripts.ManageDeliveryBoyTest">
+      <class name="com.obsquara.testscripts.HomePageTest">
         <methods>
           <include name="browserQuit"/>
-          <include name="verifyEditDeliveryBoy"/>
+          <include name="verifySelectFromDashBoard"/>
           <include name="initilizeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.testscripts.ManageDeliveryBoyTest -->
+      </class> <!-- com.obsquara.testscripts.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

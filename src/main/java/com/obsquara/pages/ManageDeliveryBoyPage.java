@@ -1,16 +1,13 @@
 package com.obsquara.pages;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.PageUtility;
 import Utilities.WaitUtility;
@@ -98,9 +95,13 @@ public class ManageDeliveryBoyPage {
 	}
 
 	public void clickSaveButton() throws InterruptedException {
-
 		WaitUtility.implicitWait();
 		PageUtility.ScrollAndClickOnElement(saveButton, driver);
+	}
+
+	public void scrollToBottom() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
 	}
 
 	public void clickDeleteButton() throws InterruptedException {
@@ -119,21 +120,27 @@ public class ManageDeliveryBoyPage {
 	public void enterName(String name) {
 		PageUtility.sendKey(nameField, name);
 	}
+
 	public void enterEmail(String email) {
 		PageUtility.sendKey(emailField, email);
 	}
+
 	public void enterPhone(String phone) {
 		PageUtility.sendKey(phoneNumberField, phone);
 	}
+
 	public void enterAddress(String address) {
 		PageUtility.sendKey(addressField, address);
 	}
+
 	public void enterUsername(String username) {
 		PageUtility.sendKey(usernameField, username);
 	}
+
 	public void enterPassword(String password) {
 		PageUtility.sendKey(passwordField, password);
 	}
+
 	public void clickRedSearchButton() {
 		PageUtility.clickOnElement(redSearchButton);
 	}
@@ -157,49 +164,41 @@ public class ManageDeliveryBoyPage {
 	public void clickResetButton() {
 		PageUtility.clickOnElement(resetButton);
 	}
-	
+
 	public void clickUpdateButton() throws InterruptedException {
 		WaitUtility.implicitWait();
-		PageUtility.ScrollAndClickOnElement(upDateButton,driver);
+		PageUtility.ScrollAndClickOnElement(upDateButton, driver);
 	}
 
 	public WebElement enterNameField(String input) {
-															
 		return PageUtility.enterText(nameField, input);
 	}
 
 	public WebElement enterEmailField(String input) {
-
 		return PageUtility.enterText(emailField, input);
 	}
 
 	public WebElement enterUserNameField(String input) {
-
 		return PageUtility.enterText(usernameField, input);
 	}
 
 	public WebElement enterAddressField(String input) {
-
 		return PageUtility.enterText(addressField, input);
 	}
 
 	public WebElement enterPasswordField(String input) {
-
 		return PageUtility.enterText(passwordField, input);
 	}
 
 	public WebElement enterPhoneNumberField(String input) {
-
 		return PageUtility.enterText(phoneNumberField, input);
 	}
 
 	public boolean saveButtonisEnabled() {
-
 		return PageUtility.isElementEnabled(saveButton);
 	}
 
 	public boolean cancelButtonisEnabled() {
-
 		return PageUtility.isElementEnabled(cancelButton);
 	}
 
@@ -235,7 +234,7 @@ public class ManageDeliveryBoyPage {
 		}
 		return false;
 	}
-	
+
 	public void addNewDeliveryBoy(DeliveryBoyUser user) throws IOException, InterruptedException {
 		clickNewButton();
 		enterNameField(user.getName());
@@ -244,15 +243,18 @@ public class ManageDeliveryBoyPage {
 		enterAddressField(user.getAddress());
 		enterUserNameField(user.getUsername());
 		enterPasswordField(user.getPassword());
+		scrollToBottom();
 		clickSaveButton();
 	}
-	
+
 	public void deleteDeliveryBoy(String searchName) throws InterruptedException {
 		clickSearchButton();
 		enterSearchName(searchName);
 		clickRedSearchButton();
 		clickDeleteButton();
+		WaitUtility.implicitWait();
 		driver.switchTo().alert().accept();
+		WaitUtility.implicitWait();
 	}
 
 }

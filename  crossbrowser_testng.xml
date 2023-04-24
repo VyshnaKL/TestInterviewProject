@@ -13,23 +13,25 @@
 
 	<test thread-count="5" name="ChromeTest">
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoTest">
-				<methods>
-					<include name="verifyApplicationLoginSuccess" />
-					<include name="verifyLoginCredentialsCaseSensitive" />
-					<include name="verifyApplicationLoginFailure" />
-				</methods>
-			</class>
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
+			<class name="com.obsquara.testscripts.HomePageTest" />
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
+			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
+			<class name="com.obsquara.testscripts.PushNotificationTest" />
+			<class name="com.obsquara.testscripts.SettingTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest" />
+
 		</classes>
 	</test> <!-- Test -->
 	<test thread-count="5" name=" EdgeTest">
 		<classes>
-			<class name="com.obsquara.testscripts.ExpenseCategoryTest">
-				<methods>
-					<include name="verifyToAddNewTitle()" />
-				</methods>
-			</class>
-
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
+			<class name="com.obsquara.testscripts.HomePageTest" />
+			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
+			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
+			<class name="com.obsquara.testscripts.PushNotificationTest" />
+			<class name="com.obsquara.testscripts.SettingTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest" />
 		</classes>
 	</test> <!-- Test -->
 

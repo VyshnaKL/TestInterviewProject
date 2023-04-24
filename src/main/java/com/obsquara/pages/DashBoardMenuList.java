@@ -1,4 +1,4 @@
- package com.obsquara.pages;
+package com.obsquara.pages;
 
 import java.util.List;
 
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtility;
-import Utilities.WaitUtility;
 
 public class DashBoardMenuList {
 	WebDriver driver;
@@ -22,18 +21,15 @@ public class DashBoardMenuList {
 	@FindBy(xpath = "//li[contains(@class,'nav-item')]//a")
 	List<WebElement> pages;
 
-	public void navigateToPages(String pageText)  {
+	public void navigateToPages(String pageText) {
 		for (WebElement menulist : pages) {
 			if (PageUtility.getElementText(menulist).equals(pageText)) {
-				
 				PageUtility.clickOnElement(menulist);
-				
-				//WaitUtility.implicitWait();
 				break;
 			}
 
 		}
-		
+
 	}
 
 }

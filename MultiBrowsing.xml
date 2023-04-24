@@ -11,9 +11,13 @@
 		<parameter name="validationMessage" value="Please fill out this field." />
 		<parameter name="inputMessage" value="FreshJuice" />
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoTest"></class>
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
 			<class name="com.obsquara.testscripts.HomePageTest" />
 			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
+			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
+			<class name="com.obsquara.testscripts.PushNotificationTest" />
+			<class name="com.obsquara.testscripts.SettingTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest"/>
 		</classes>
 	</test>
 	<test name="EdgeBrowsing">
@@ -23,9 +27,13 @@
 		<parameter name="validationMessage" value="Please fill out this field." />
 		<parameter name="inputMessage" value="FreshJuice" />
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoTest"></class>
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
 			<class name="com.obsquara.testscripts.HomePageTest" />
 			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
+			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
+			<class name="com.obsquara.testscripts.PushNotificationTest" />
+			<class name="com.obsquara.testscripts.SettingTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
