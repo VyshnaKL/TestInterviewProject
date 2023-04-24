@@ -20,6 +20,8 @@
 			<class name="com.obsquara.testscripts.PushNotificationTest" />
 			<class name="com.obsquara.testscripts.SettingTest" />
 			<class name="com.obsquara.testscripts.AdminUserTest" />
+			<class name="com.obsquara.testscripts.ManageUserTest" />
+			<class name="com.obsquara.testscripts.ManageSliderTest" />
 
 		</classes>
 	</test> <!-- Test -->
@@ -32,6 +34,8 @@
 			<class name="com.obsquara.testscripts.PushNotificationTest" />
 			<class name="com.obsquara.testscripts.SettingTest" />
 			<class name="com.obsquara.testscripts.AdminUserTest" />
+			<class name="com.obsquara.testscripts.ManageUserTest" />
+			<class name="com.obsquara.testscripts.ManageSliderTest" />
 		</classes>
 	</test> <!-- Test -->
 
