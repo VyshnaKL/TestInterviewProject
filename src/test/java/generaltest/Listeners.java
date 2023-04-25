@@ -1,5 +1,5 @@
 
-package com.obsquara.utilities;
+package generaltest;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

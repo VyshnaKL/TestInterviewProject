@@ -1,7 +1,5 @@
 package com.obsquara.testscripts;
 
-import static constants.Constants.*;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -32,7 +30,7 @@ public class Base {
 	public void initilizeBrowser(String browser) throws Exception {
 		prop = new Properties();
 		try {
-			fs = new FileInputStream(SYSTEM_PATH + CONFIGFILE);
+			fs = new FileInputStream(System.getProperty("user.dir") + constants.Constants.CONFIGFILE);
 
 		} catch (Exception e) {
 
@@ -45,7 +43,7 @@ public class Base {
 		prop1 = new Properties();
 
 		try {
-			fs = new FileInputStream(SYSTEM_PATH + TESTDATAFILE);
+			fs = new FileInputStream(System.getProperty("user.dir") + constants.Constants.TESTDATAFILE);
 
 		} catch (Exception e) {
 

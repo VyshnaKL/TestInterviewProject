@@ -1,7 +1,6 @@
 package Utilities;
 
 import java.time.Duration;
-import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -22,7 +21,7 @@ public class WaitUtility {
 	public static void implicitWait(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
 	}
-	
+
 	public static void implicitWait() throws InterruptedException {
 		Thread.sleep(5000);
 	}

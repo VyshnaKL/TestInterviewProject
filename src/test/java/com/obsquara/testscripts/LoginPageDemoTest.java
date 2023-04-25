@@ -1,7 +1,5 @@
 package com.obsquara.testscripts;
 
-import static constants.Constants.EXCELFILE;
-import static constants.Constants.SYSTEM_PATH;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -13,9 +11,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.obsquara.pages.LoginPageDemoPage;
-import com.obsquara.utilities.Retry;
 
 import Utilities.ExcelUtility;
+import Utilities.UtilityFile;
+import generaltest.Retry;
 
 public class LoginPageDemoTest extends Base {
 	LoginPageDemoPage loginPageDemoPage;
@@ -32,8 +31,7 @@ public class LoginPageDemoTest extends Base {
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyApplicationLoginSuccess(String username, String password) throws IOException {
-		String expectedUrl = ExcelUtility.getString(0, 0, SYSTEM_PATH +EXCELFILE,
-				"LoginSuccess");
+		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.enterNameInUsernameField(username).enterTextInPasswordField(password).clickSignInButton();
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
@@ -42,8 +40,7 @@ public class LoginPageDemoTest extends Base {
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginCredentialsCaseSensitive(String username, String password) throws IOException {
-		String expectedUrl = ExcelUtility.getString(0, 0, SYSTEM_PATH +EXCELFILE,
-				"LoginSuccess");
+		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.enterNameInUsernameField(username.toUpperCase()).enterTextInPasswordField(password)
 				.clickSignInButton();
@@ -53,8 +50,7 @@ public class LoginPageDemoTest extends Base {
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginPasswordCaseSensitive(String username, String password) throws IOException {
-		String expectedUrl = ExcelUtility.getString(0, 0, SYSTEM_PATH +EXCELFILE,
-				"LoginSuccess");
+		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.enterNameInUsernameField(username);
 		loginPageDemoPage.enterTextInPasswordField(password.toUpperCase());
@@ -65,8 +61,7 @@ public class LoginPageDemoTest extends Base {
 
 	@Test(retryAnalyzer = Retry.class, dataProvider = "LoginProvider", priority = 1)
 	public void verifyApplicationLoginFailure(String username, String password) throws IOException {
-		String expectedUrl = ExcelUtility.getString(0, 0, SYSTEM_PATH +EXCELFILE,
-				"LoginSuccess");
+		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.enterNameInUsernameField(username).enterTextInPasswordField(password).clickSignInButton();
 		assertFalse(driver.getCurrentUrl().equals(expectedUrl), "Invalid Username/Password");
