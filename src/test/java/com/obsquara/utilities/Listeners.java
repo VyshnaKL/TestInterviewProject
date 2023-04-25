@@ -1,5 +1,5 @@
 
-package com.obsquara.testscripts;
+package com.obsquara.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -9,6 +9,7 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.obsquara.testscripts.Base;
 
 import Utilities.ExtentReportUtility;
 

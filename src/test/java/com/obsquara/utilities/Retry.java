@@ -1,4 +1,4 @@
-package com.obsquara.testscripts;
+package com.obsquara.utilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

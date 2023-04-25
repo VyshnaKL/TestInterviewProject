@@ -115,14 +115,6 @@ public class AdminUserPage {
 		return false;
 	}
 
-	public void deleteDeliveryBoy(String searchName) throws InterruptedException {
-		clickSearchButton();
-		enterSearchName(searchName);
-		clickRedSearchButton();
-		clickDeleteButton();
-		WaitUtility.implicitWait();
-		driver.switchTo().alert().accept();
-		WaitUtility.implicitWait();
-	}
+	
 
 }

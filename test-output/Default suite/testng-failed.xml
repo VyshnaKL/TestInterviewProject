@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsquara.testscripts.ExpenseCategoryTest">
+      <class name="com.obsquara.testscripts.SettingTest">
         <methods>
+          <include name="verifyToChangePassword"/>
           <include name="browserQuit"/>
-          <include name="verifyToAddNewTitle"/>
-          <include name="verifySearchTitle"/>
+          <include name="verifyMenuManagement"/>
           <include name="initilizeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.testscripts.ExpenseCategoryTest -->
+      </class> <!-- com.obsquara.testscripts.SettingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

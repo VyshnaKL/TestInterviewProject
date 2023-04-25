@@ -1,5 +1,7 @@
 package com.obsquara.testscripts;
 
+import static constants.Constants.EXCELFILE;
+import static constants.Constants.SYSTEM_PATH;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -11,9 +13,9 @@ import com.obsquara.pages.DashBoardMenuList;
 import com.obsquara.pages.DeliveryBoyUser;
 import com.obsquara.pages.LoginSuccess;
 import com.obsquara.pages.ManageDeliveryBoyPage;
+import com.obsquara.utilities.Retry;
 
 import Utilities.ExcelUtility;
-import constants.Constants;
 
 public class ManageDeliveryBoyTest extends Base {
 
@@ -23,23 +25,16 @@ public class ManageDeliveryBoyTest extends Base {
 	@Test(retryAnalyzer = Retry.class, priority = 1)
 	public void verifyToAddNewDeliveryBoy() throws IOException, InterruptedException {
 
-		String name = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String email = ExcelUtility.getString(1, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String phonenumber = ExcelUtility.getString(2, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String address = ExcelUtility.getString(3, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String deliveryusername = ExcelUtility.getString(4, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String deliverypassword = ExcelUtility.getString(5, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
+		String name = ExcelUtility.getString(0, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String email = ExcelUtility.getString(1, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String phonenumber = ExcelUtility.getString(2, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String address = ExcelUtility.getString(3, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String deliveryusername = ExcelUtility.getString(4, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String deliverypassword = ExcelUtility.getString(5, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(7, 0, SYSTEM_PATH + EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickNewButton();
 		manageDeliveryBoyPage.enterNameField(name);
@@ -56,13 +51,11 @@ public class ManageDeliveryBoyTest extends Base {
 
 	@Test(retryAnalyzer = Retry.class, priority = 2)
 	public void verifySearchDeliveryBoy() throws IOException, InterruptedException {
-		String searchName = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
+		String searchName = ExcelUtility.getString(0, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(7, 0, SYSTEM_PATH + EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickSearchButton();
 		manageDeliveryBoyPage.enterSearchName(searchName);
@@ -73,31 +66,20 @@ public class ManageDeliveryBoyTest extends Base {
 	@Test(retryAnalyzer = Retry.class, priority = 4)
 	public void verifyEditDeliveryBoy() throws IOException, InterruptedException {
 
-		String name = ExcelUtility.getString(0, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String email = ExcelUtility.getString(1, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String phonenumber = ExcelUtility.getString(2, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String address = ExcelUtility.getString(3, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String deliveryusername = ExcelUtility.getString(4, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String deliverypassword = ExcelUtility.getString(5, 1, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String editName = ExcelUtility.getString(0, 2, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String editEmail = ExcelUtility.getString(1, 2, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String editPhonenumber = ExcelUtility.getString(2, 2, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
-		String editAddress = ExcelUtility.getString(3, 2, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
+		String name = ExcelUtility.getString(0, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String email = ExcelUtility.getString(1, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String phonenumber = ExcelUtility.getString(2, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String address = ExcelUtility.getString(3, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String deliveryusername = ExcelUtility.getString(4, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String deliverypassword = ExcelUtility.getString(5, 1, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String editName = ExcelUtility.getString(0, 2, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String editEmail = ExcelUtility.getString(1, 2, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String editPhonenumber = ExcelUtility.getString(2, 2, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
+		String editAddress = ExcelUtility.getString(3, 2, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(7, 0, SYSTEM_PATH + EXCELFILE, "DashBoard"));
 		DeliveryBoyUser user = new DeliveryBoyUser(name, email, phonenumber, address, deliveryusername,
 				deliverypassword);
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
@@ -130,13 +112,11 @@ public class ManageDeliveryBoyTest extends Base {
 
 	@Test(retryAnalyzer = Retry.class, priority = 3)
 	public void verifyDeleteDeliveryBoy() throws IOException, InterruptedException {
-		String searchName = ExcelUtility.getString(0, 0, System.getProperty("user.dir") + Constants.EXCELFILE,
-				"ManageDeliveryBoy");
+		String searchName = ExcelUtility.getString(0, 0, SYSTEM_PATH + EXCELFILE, "ManageDeliveryBoy");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(7, 0, SYSTEM_PATH + EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickSearchButton();
 		manageDeliveryBoyPage.enterSearchName(searchName);
@@ -152,8 +132,7 @@ public class ManageDeliveryBoyTest extends Base {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(7, 0, System.getProperty("user.dir") + Constants.EXCELFILE, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(7, 0, SYSTEM_PATH + EXCELFILE, "DashBoard"));
 		manageDeliveryBoyPage = new ManageDeliveryBoyPage(driver);
 		manageDeliveryBoyPage.clickSearchButton();
 		manageDeliveryBoyPage.clickResetButton();

@@ -35,6 +35,9 @@ public class ManageUserPage {
 
 	@FindBy(xpath = "//div[@class='profile-info-name']")
 	WebElement resultPassword;
+	
+	@FindBy(css =   "")
+	WebElement fontcolor;
 
 	public ManageUserPage clickonManagerUserElement() {
 		PageUtility.clickOnElement(manageUser);
@@ -55,6 +58,10 @@ public class ManageUserPage {
 		PageUtility.clickOnElement(searchButton);
 		return this;
 
+	}
+	
+	public String getSearchButtonColor() {
+		return PageUtility.getElementFontColor(searchButton, "color");
 	}
 
 	public ManageUserPage clickonRedSearchButton() {
