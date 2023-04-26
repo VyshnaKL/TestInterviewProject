@@ -12,7 +12,7 @@
 
 	<test thread-count="5" name="Test">
 		<classes>
-			<!--<class name="com.obsquara.testscripts.Base" />
+			<class name="com.obsquara.testscripts.Base" />
 			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
 			<class name="com.obsquara.testscripts.HomePageTest" />
 			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
@@ -21,7 +21,7 @@
 			<class name="com.obsquara.testscripts.ManageSliderTest" />
 			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
 			<class name="com.obsquara.testscripts.AdminUserTest" />
-			<class name="com.obsquara.testscripts.SettingTest" />-->
+			<class name="com.obsquara.testscripts.SettingTest" />
 			<class name="com.obsquara.testscripts.ManageLocationTest" />
 		</classes>
 	</test> <!-- Test -->
