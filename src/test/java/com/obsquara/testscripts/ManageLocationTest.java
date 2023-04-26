@@ -18,7 +18,7 @@ public class ManageLocationTest extends Base {
 	ManageLocationPage manageLocationPage;
 	LoginSuccess loginSuccess;
 
-	@Test(priority = 1)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifytheAddingNewLocation() throws IOException, InterruptedException {
 		String location = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "ManageLocation");
 		String deliveryAmount = ExcelUtility.getString(2, 0, UtilityFile.excelPath, "ManageLocation");
@@ -34,7 +34,7 @@ public class ManageLocationTest extends Base {
 		manageLocationPage.deleteLocation(state, location);
 	}
 	
-	@Test(priority = 2)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifytheSearchManageLocation() throws IOException, InterruptedException {
 		String searchName = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "ManageLocation");
 		String state = ExcelUtility.getString(3, 0, UtilityFile.excelPath, "ManageLocation");
@@ -52,7 +52,7 @@ public class ManageLocationTest extends Base {
 		manageLocationPage.deleteLocation(state, searchName);
 	}
 
-	@Test(priority = 3)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifytheDeleteButtoninManageLocation() throws IOException, InterruptedException {
 		String location = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "ManageLocation");
 		String state = ExcelUtility.getString(3, 0, UtilityFile.excelPath, "ManageLocation");

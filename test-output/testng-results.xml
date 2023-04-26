@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-27T00:26:26 IST" name="Suite" finished-at="2023-04-27T00:27:18 IST" duration-ms="51976">
+  <suite started-at="2023-04-27T00:53:22 IST" name="Suite" finished-at="2023-04-27T00:54:14 IST" duration-ms="52074">
     <groups>
     </groups>
-    <test started-at="2023-04-27T00:26:26 IST" name="Test" finished-at="2023-04-27T00:27:18 IST" duration-ms="51976">
+    <test started-at="2023-04-27T00:53:22 IST" name="Test" finished-at="2023-04-27T00:54:14 IST" duration-ms="52074">
       <class name="com.obsquara.testscripts.ManageLocationTest">
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:26:26 IST" name="initilizeBrowser" finished-at="2023-04-27T00:26:29 IST" duration-ms="2459" status="PASS">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:22 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:24 IST" duration-ms="2552" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheAddingNewLocation()[pri:1, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:26:29 IST" name="verifytheAddingNewLocation" finished-at="2023-04-27T00:26:43 IST" duration-ms="13901" status="PASS">
+        <test-method signature="verifytheAddingNewLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:24 IST" name="verifytheAddingNewLocation" finished-at="2023-04-27T00:53:38 IST" duration-ms="13918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifytheAddingNewLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:26:43 IST" name="browserQuit" finished-at="2023-04-27T00:26:43 IST" duration-ms="330" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:38 IST" name="browserQuit" finished-at="2023-04-27T00:53:38 IST" duration-ms="353" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifytheAddingNewLocation status=SUCCESS method=ManageLocationTest.verifytheAddingNewLocation()[pri:1, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb] output={null}]]]>
+                <![CDATA[[TestResult name=verifytheAddingNewLocation status=SUCCESS method=ManageLocationTest.verifytheAddingNewLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:26:43 IST" name="initilizeBrowser" finished-at="2023-04-27T00:26:44 IST" duration-ms="1484" status="PASS">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:38 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:40 IST" duration-ms="1466" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,41 +44,41 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheSearchManageLocation()[pri:2, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:26:44 IST" name="verifytheSearchManageLocation" finished-at="2023-04-27T00:27:03 IST" duration-ms="18166" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifytheSearchManageLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:27:03 IST" name="browserQuit" finished-at="2023-04-27T00:27:03 IST" duration-ms="380" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifytheSearchManageLocation status=SUCCESS method=ManageLocationTest.verifytheSearchManageLocation()[pri:2, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:27:03 IST" name="initilizeBrowser" finished-at="2023-04-27T00:27:04 IST" duration-ms="1456" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheDeleteButtoninManageLocation()[pri:3, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:27:04 IST" name="verifytheDeleteButtoninManageLocation" finished-at="2023-04-27T00:27:18 IST" duration-ms="13432" status="PASS">
+        <test-method signature="verifytheDeleteButtoninManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:40 IST" name="verifytheDeleteButtoninManageLocation" finished-at="2023-04-27T00:53:53 IST" duration-ms="13528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifytheDeleteButtoninManageLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb]" started-at="2023-04-27T00:27:18 IST" name="browserQuit" finished-at="2023-04-27T00:27:18 IST" duration-ms="344" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:53 IST" name="browserQuit" finished-at="2023-04-27T00:53:54 IST" duration-ms="328" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifytheDeleteButtoninManageLocation status=SUCCESS method=ManageLocationTest.verifytheDeleteButtoninManageLocation()[pri:3, instance:com.obsquara.testscripts.ManageLocationTest@63fbfaeb] output={null}]]]>
+                <![CDATA[[TestResult name=verifytheDeleteButtoninManageLocation status=SUCCESS method=ManageLocationTest.verifytheDeleteButtoninManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:54 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:55 IST" duration-ms="1470" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilizeBrowser -->
+        <test-method signature="verifytheSearchManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:55 IST" name="verifytheSearchManageLocation" finished-at="2023-04-27T00:54:13 IST" duration-ms="18057" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifytheSearchManageLocation -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:54:13 IST" name="browserQuit" finished-at="2023-04-27T00:54:14 IST" duration-ms="364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifytheSearchManageLocation status=SUCCESS method=ManageLocationTest.verifytheSearchManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
               </value>
             </param>
           </params>
