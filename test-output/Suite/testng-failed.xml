@@ -7,17 +7,17 @@
   <parameter name="inputMessage" value="FreshJuice"/>
   <parameter name="username" value="admin"/>
   <listeners>
-    <listener class-name="com.obsquara.utilities.Listeners"/>
+    <listener class-name="generaltest.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsquara.testscripts.SettingTest">
+      <class name="com.obsquara.testscripts.ManageLocationTest">
         <methods>
           <include name="browserQuit"/>
-          <include name="verifyMenuManagement"/>
+          <include name="verifytheAddingNewLocation"/>
           <include name="initilizeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.testscripts.SettingTest -->
+      </class> <!-- com.obsquara.testscripts.ManageLocationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

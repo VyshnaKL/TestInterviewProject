@@ -14,23 +14,22 @@ import com.obsquara.pages.LoginSuccess;
 
 import Utilities.ExcelUtility;
 import Utilities.UtilityFile;
-import generaltest.Retry;
 
 public class AdminUserTest extends Base {
 	AdminUserPage adminUserPage;
 	LoginSuccess loginSuccess;
 
-	@Test(retryAnalyzer = Retry.class, dataProvider = "LoginProvider")
-	public void verifyNewAdminUser(String username, String password) throws IOException {
+	@Test(retryAnalyzer = generaltest.Retry.class, dataProvider = "LoginProvider")
+	public void verifyNewAdminUser(String username, String password) throws IOException, InterruptedException {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
 		adminUserPage = new AdminUserPage(driver);
 		adminUserPage.clickonNewUser().enterUserNameField(username).enterPasswordField(password).selectbyDropdownIndex()
 				.clickonSaveNotification();
 		assertTrue(adminUserPage.checkTitle(username), "USERNAME is  not found in table");
+		adminUserPage.deleteAdminUser(username, password, username);
 	}
 
 	@DataProvider(name = "LoginProvider")
@@ -39,28 +38,41 @@ public class AdminUserTest extends Base {
 
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 
 	public void verifyDeleteAdminUser() throws IOException, InterruptedException {
-		String searchName = ExcelUtility.getString(0, 0, UtilityFile.excelPath,
-				"AdminUsers");
-		String username = ExcelUtility.getString(0, 0, UtilityFile.excelPath,
-				"AdminUsers");
-		String password = ExcelUtility.getString(0, 0, UtilityFile.excelPath,
-				"AdminUsers");
+		String searchName = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
+		String username = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
+		String password = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(
-				ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
 		adminUserPage = new AdminUserPage(driver);
 		adminUserPage.clickonNewUser().enterUserNameField(username).enterPasswordField(password).selectbyDropdownIndex()
 				.clickonSaveNotification().clickSearchButton();
 		adminUserPage.enterSearchName(searchName).clickRedSearchButton().clickDeleteButton();
 		driver.switchTo().alert().accept();
-		assertFalse(adminUserPage.checkTitle(searchName), "username not found in table");
-		assertTrue(adminUserPage.isAlertMessageDisplayed(), "alert box not displayed");
+		assertFalse(adminUserPage.checkTitle(searchName), "username is found in table");
+		assertTrue(adminUserPage.isAlertMessageDisplayed(), "username not deleted successfully");
 
+	}
+	
+	@Test(retryAnalyzer = generaltest.Retry.class)
+	public void verifySearchAdminUser() throws IOException, InterruptedException {
+		String searchName = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
+		String username = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
+		String password = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
+		loginSuccess = new LoginSuccess(driver);
+		loginSuccess.login();
+		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
+		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
+		adminUserPage = new AdminUserPage(driver);
+		adminUserPage.clickonNewUser().enterUserNameField(username).enterPasswordField(password).selectbyDropdownIndex()
+				.clickonSaveNotification().clickSearchButton();
+		adminUserPage.enterSearchName(searchName).clickRedSearchButton();
+		assertTrue(adminUserPage.checkTitle(searchName), "username not found in table");
+		adminUserPage.deleteAdminUser(username, password, searchName);
 	}
 
 }

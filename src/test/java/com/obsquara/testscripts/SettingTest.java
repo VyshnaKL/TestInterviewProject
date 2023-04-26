@@ -1,21 +1,23 @@
 package com.obsquara.testscripts;
 
-
 import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
+
 import org.testng.annotations.Test;
+
 import com.obsquara.pages.DashBoardMenuList;
 import com.obsquara.pages.LoginSuccess;
 import com.obsquara.pages.SettingPage;
+
 import Utilities.ExcelUtility;
 import Utilities.UtilityFile;
-import generaltest.Retry;
 
 public class SettingTest extends Base {
 	SettingPage settingPage;
 	LoginSuccess loginSuccess;
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifyToChangePassword() throws IOException, InterruptedException {
 
 		String oldpassword = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "Settings");
@@ -34,8 +36,8 @@ public class SettingTest extends Base {
 
 	}
 
-	@Test(retryAnalyzer = Retry.class)
-	public void verifyMenuManagement() throws IOException, InterruptedException {
+	@Test(retryAnalyzer = generaltest.Retry.class)
+	public void verifytoaddNewNameMenuManagement() throws IOException, InterruptedException {
 		String menuname = ExcelUtility.getString(4, 0, UtilityFile.excelPath, "Settings");
 		String url = ExcelUtility.getString(5, 0, UtilityFile.excelPath, "Settings");
 		String faicon = ExcelUtility.getString(6, 0, UtilityFile.excelPath, "Settings");
@@ -49,14 +51,14 @@ public class SettingTest extends Base {
 		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(9, 0, UtilityFile.excelPath, "DashBoard"));
 		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(11, 0, UtilityFile.excelPath, "DashBoard"));
 		settingPage = new SettingPage(driver);
-		//settingPage.clickManageMenu();
+		// settingPage.clickManageMenu();
 		settingPage.clickNewButton().enterTextinMenuName(menuname).selectbyDropdownIndex();
 		settingPage.enterTextinUrl(url).enterTextinFaIcon(faicon).enterTextinMenuOrder(menuorder)
 				.enterTextinActiveFiles(activeFiles).enterTextinTableName(tablename).enterTextinColor(color);
 		settingPage.clickYesButton();
 		settingPage.scrollToBottom();
 		settingPage.clickSave();
-		assertTrue(settingPage.checkTitle(menuname), "new Menu name is not added");
+		assertTrue(settingPage.checkTitle(menuname), " no new Menu name is added");
 	}
 
 }

@@ -34,9 +34,6 @@ public class SettingPage {
 	@FindBy(xpath = "//a[@class=' nav-link ']")
 	WebElement changePassword;
 
-	//@FindBy(xpath = "///a[@class='active highlight nav-link']//following::p[text()='Manage Menu']")
-	//WebElement manageMenu;
-
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement addNewOption;
 	
@@ -113,11 +110,7 @@ public class SettingPage {
 		return PageUtility.isDisplay(confirmPassword);
 	}
 
-	/*public SettingPage clickManageMenu() {
-		PageUtility.clickOnElement(manageMenu);
-		return this;
-	}*/
-
+	
 	public SettingPage enterTextinMenuName(String input) {
 		PageUtility.enterText(menuName, input);
 		return this;

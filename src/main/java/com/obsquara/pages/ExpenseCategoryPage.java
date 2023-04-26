@@ -2,12 +2,14 @@ package com.obsquara.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtility;
+import Utilities.WaitUtility;
 
 public class ExpenseCategoryPage {
 	WebDriver driver;
@@ -115,6 +117,12 @@ public class ExpenseCategoryPage {
 		PageUtility.enterText(titleTextField, input);
 		return this;
 	}
+	
+	public ExpenseCategoryPage scrollToBottom() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+		return this;
+	}
 
 	public boolean saveButtonisEnabled() {
 
@@ -139,13 +147,15 @@ public class ExpenseCategoryPage {
 		return false;
 	}
 
-	public void deleteExpenseCategory(String title) {
+	public void deleteExpenseCategory(String title) throws InterruptedException {
 		clickExpenseCategory();
 		clickSearchButton();
 		enterSearchTitle(title);
 		clickRedSearchButton();
 		clickDeleteButton();
+		WaitUtility.implicitWait();
 		driver.switchTo().alert().accept();
+		WaitUtility.implicitWait();
 
 	}
 

@@ -115,6 +115,13 @@ public class AdminUserPage {
 		return false;
 	}
 
-	
+	public void deleteAdminUser(String username, String password, String searchName) throws InterruptedException {
+		clickonNewUser().enterUserNameField(username).enterPasswordField(password).selectbyDropdownIndex()
+				.clickonSaveNotification().clickSearchButton().enterSearchName(searchName).clickRedSearchButton()
+				.clickDeleteButton();
+		WaitUtility.implicitWait();
+		driver.switchTo().alert().accept();
+		WaitUtility.implicitWait();
+	}
 
 }

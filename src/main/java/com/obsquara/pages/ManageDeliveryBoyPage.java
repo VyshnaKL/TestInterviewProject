@@ -86,70 +86,93 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath = "//div[@class='hide_div']")
 	WebElement searchListBox;
 
-	public void clickNewButton() {
+	public ManageDeliveryBoyPage clickNewButton() {
 		PageUtility.ScrollAndClickOnElement(newButton, driver);
+		return this;
 	}
 
-	public void clickEditButton() {
+	public ManageDeliveryBoyPage clickEditButton() {
 		PageUtility.clickOnElement(editButton);
+		return this;
 	}
 
-	public void clickSaveButton() throws InterruptedException {
+	public ManageDeliveryBoyPage clickSaveButton() throws InterruptedException {
 		WaitUtility.implicitWait();
 		PageUtility.ScrollAndClickOnElement(saveButton, driver);
+		return this;
 	}
 
-	public void scrollToBottom() {
+	public ManageDeliveryBoyPage scrollToBottom() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+		return this;
 	}
 
-	public void clickDeleteButton() throws InterruptedException {
+	public ManageDeliveryBoyPage clickDeleteButton() throws InterruptedException {
 		WaitUtility.implicitWait();
 		PageUtility.clickOnElement(deleteButton);
+		return this;
+	}
+	public ManageDeliveryBoyPage clickSearchButton() {
+		PageUtility.clickOnElement(searchButton);
+		return this;
+	}
+	public ManageDeliveryBoyPage enterName(String name) {
+		PageUtility.sendKey(nameField, name);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage enterEmail(String email) {
+		PageUtility.sendKey(emailField, email);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage enterPhone(String phone) {
+		PageUtility.sendKey(phoneNumberField, phone);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage enterAddress(String address) {
+		PageUtility.sendKey(addressField, address);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage enterUsername(String username) {
+		PageUtility.sendKey(usernameField, username);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage enterPassword(String password) {
+		PageUtility.sendKey(passwordField, password);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage clickRedSearchButton() {
+		PageUtility.clickOnElement(redSearchButton);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage clickCancelButton() {
+		PageUtility.clickOnElement(cancelButton);
+		return this;
+	}
+	
+	public ManageDeliveryBoyPage clickResetButton() {
+		PageUtility.clickOnElement(resetButton);
+		return this;
+	}
+
+	public ManageDeliveryBoyPage clickUpdateButton() throws InterruptedException {
+		WaitUtility.implicitWait();
+		PageUtility.ScrollAndClickOnElement(upDateButton, driver);
+		return this;
 	}
 
 	public WebElement enterSearchName(String input) {
 		return PageUtility.enterText(searchName, input);
 	}
 
-	public void clickSearchButton() {
-		PageUtility.clickOnElement(searchButton);
-	}
-
-	public void enterName(String name) {
-		PageUtility.sendKey(nameField, name);
-	}
-
-	public void enterEmail(String email) {
-		PageUtility.sendKey(emailField, email);
-	}
-
-	public void enterPhone(String phone) {
-		PageUtility.sendKey(phoneNumberField, phone);
-	}
-
-	public void enterAddress(String address) {
-		PageUtility.sendKey(addressField, address);
-	}
-
-	public void enterUsername(String username) {
-		PageUtility.sendKey(usernameField, username);
-	}
-
-	public void enterPassword(String password) {
-		PageUtility.sendKey(passwordField, password);
-	}
-
-	public void clickRedSearchButton() {
-		PageUtility.clickOnElement(redSearchButton);
-	}
-
-	public void clickCancelButton() {
-		PageUtility.clickOnElement(cancelButton);
-	}
-
-	public boolean isAlertMessageDisplayed() {
+		public boolean isAlertMessageDisplayed() {
 		return PageUtility.isDisplay(alertMessageBox);
 	}
 
@@ -161,14 +184,7 @@ public class ManageDeliveryBoyPage {
 		return PageUtility.isDisplay(searchListBox);
 	}
 
-	public void clickResetButton() {
-		PageUtility.clickOnElement(resetButton);
-	}
-
-	public void clickUpdateButton() throws InterruptedException {
-		WaitUtility.implicitWait();
-		PageUtility.ScrollAndClickOnElement(upDateButton, driver);
-	}
+	
 
 	public WebElement enterNameField(String input) {
 		return PageUtility.enterText(nameField, input);

@@ -14,13 +14,12 @@ import com.obsquara.pages.LoginPageDemoPage;
 
 import Utilities.ExcelUtility;
 import Utilities.UtilityFile;
-import generaltest.Retry;
 
 public class LoginPageDemoTest extends Base {
 	LoginPageDemoPage loginPageDemoPage;
 
 	@Parameters({ "validationMessage" })
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifytheSignInButton(String validationMessage) {
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.clickSignInButton();
@@ -28,7 +27,7 @@ public class LoginPageDemoTest extends Base {
 		assertEquals(message, validationMessage, "Validation messages doesn't match");
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyApplicationLoginSuccess(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
@@ -37,7 +36,7 @@ public class LoginPageDemoTest extends Base {
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginCredentialsCaseSensitive(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
@@ -47,7 +46,7 @@ public class LoginPageDemoTest extends Base {
 		assertTrue(driver.getCurrentUrl().equals(expectedUrl), "Unable to login");
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	@Parameters({ "username", "password" })
 	public void verifyLoginPasswordCaseSensitive(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
@@ -56,21 +55,21 @@ public class LoginPageDemoTest extends Base {
 		loginPageDemoPage.enterTextInPasswordField(password.toUpperCase());
 		loginPageDemoPage.clickSignInButton();
 		assertFalse(driver.getCurrentUrl().equals(expectedUrl), "Invalid Username/Password");
-		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Alert box message not displayed");
+		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Invalid Username/Password");
 	}
 
-	@Test(retryAnalyzer = Retry.class, dataProvider = "LoginProvider", priority = 1)
+	@Test(retryAnalyzer = generaltest.Retry.class, dataProvider = "LoginProvider", priority = 1)
 	public void verifyApplicationLoginFailure(String username, String password) throws IOException {
 		String expectedUrl = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "LoginSuccess");
 		loginPageDemoPage = new LoginPageDemoPage(driver);
 		loginPageDemoPage.enterNameInUsernameField(username).enterTextInPasswordField(password).clickSignInButton();
 		assertFalse(driver.getCurrentUrl().equals(expectedUrl), "Invalid Username/Password");
-		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Alert box message not displayed");
+		assertTrue(loginPageDemoPage.alertBoxMessageDisplayed(), "Invalid Username/Password");
 	}
 
 	@DataProvider(name = "LoginProvider")
 	public Object[][] getDataFromDataprovider() {
-		return new Object[][] { { "Vyshna", "V123" }, };
+		return new Object[][] { { "Vyshna", "V1234" }, };
 
 	}
 

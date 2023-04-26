@@ -1,20 +1,23 @@
 package com.obsquara.testscripts;
 
 import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
+
 import org.testng.annotations.Test;
+
 import com.obsquara.pages.DashBoardMenuList;
 import com.obsquara.pages.LoginSuccess;
 import com.obsquara.pages.ManageSliderPage;
+
 import Utilities.ExcelUtility;
 import Utilities.UtilityFile;
-import generaltest.Retry;
 
 public class ManageSliderTest extends Base {
 	ManageSliderPage manageSliderPage;
 	LoginSuccess loginSuccess;
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifyAddingNewLinkinSlider() throws IOException {
 		String link = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "ManageSlider");
 		loginSuccess = new LoginSuccess(driver);
@@ -26,7 +29,7 @@ public class ManageSliderTest extends Base {
 		assertTrue(manageSliderPage.alertMessageDisplay(), " failed to add new slider in website ");
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifyEditLinkinSlider() throws IOException {
 		String link = ExcelUtility.getString(1, 0, UtilityFile.excelPath, "ManageSlider");
 		loginSuccess = new LoginSuccess(driver);
@@ -38,7 +41,7 @@ public class ManageSliderTest extends Base {
 		assertTrue(manageSliderPage.alertMessageDisplay(), "Failed to update the new link");
 	}
 
-	@Test(retryAnalyzer = Retry.class)
+	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifyDeleteLinkinSlider() throws IOException {
 		loginSuccess = new LoginSuccess(driver);
 		loginSuccess.login();

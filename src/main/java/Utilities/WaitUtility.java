@@ -23,7 +23,7 @@ public class WaitUtility {
 	}
 
 	public static void implicitWait() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	public static void waitForElement(WebDriver driver, WebElement target) {
