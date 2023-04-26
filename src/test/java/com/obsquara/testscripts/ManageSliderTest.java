@@ -62,6 +62,6 @@ public class ManageSliderTest extends Base {
 		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(5, 0, UtilityFile.excelPath, "DashBoard"));
 		manageSliderPage = new ManageSliderPage(driver);
 	
-	
+	}
 
 }
