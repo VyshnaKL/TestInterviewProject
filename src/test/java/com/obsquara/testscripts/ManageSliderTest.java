@@ -53,15 +53,6 @@ public class ManageSliderTest extends Base {
 		assertTrue(manageSliderPage.alertMessageDisplay(), " the link is not deleted frm the slider page");
 
 	}
-	
-	@Test(retryAnalyzer = generaltest.Retry.class)
-	public void verifyImageUploaderinLinkinSlider() throws IOException {
-		loginSuccess = new LoginSuccess(driver);
-		loginSuccess.login();
-		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
-		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(5, 0, UtilityFile.excelPath, "DashBoard"));
-		manageSliderPage = new ManageSliderPage(driver);
-	
-	}
+
 
 }

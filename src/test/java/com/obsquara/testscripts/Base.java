@@ -1,6 +1,7 @@
 package com.obsquara.testscripts;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -19,7 +20,6 @@ import Utilities.WaitUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
-
 	public WebDriver driver;
 	public ScreenShotUtility scrshot;
 	public Properties prop, prop1;
@@ -32,28 +32,18 @@ public class Base {
 		try {
 			fs = new FileInputStream(System.getProperty("user.dir") + constants.Constants.CONFIGFILE);
 
-		} catch (Exception e) {
-
-		}
-		try {
 			prop.load(fs);
-		} catch (Exception e) {
-
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
-		prop1 = new Properties();
-
 		try {
 			fs = new FileInputStream(System.getProperty("user.dir") + constants.Constants.TESTDATAFILE);
 
-		} catch (Exception e) {
-
-		}
-		try {
-
 			prop1.load(fs);
-		} catch (Exception e) {
-
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+
 		if (browser.equalsIgnoreCase("firefox")) {
 			driver = WebDriverManager.firefoxdriver().create();
 		} else if (browser.equalsIgnoreCase("chrome")) {

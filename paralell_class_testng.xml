@@ -20,7 +20,7 @@
 			</class>
 			<class name="com.obsquara.testscripts.HomePageTest">
 				<methods>
-					<exclude name="verifySuccessfullyLogout" />
+					<include name="verifySuccessfullyLogout" />
 					<include name="verifyPushUpMenuButton" />
 					<include name=" verifySelectFromDashBoard" />
 				</methods>

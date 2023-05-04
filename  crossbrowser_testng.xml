@@ -5,6 +5,8 @@
 		<listener class-name="generaltest.Listeners" />
 	</listeners>
 	<parameter name="browser" value="chrome" />
+	<parameter name="browser" value="Edge" />
+	<parameter name="browser" value="firefox" />
 	<parameter name="username" value="admin" />
 	<parameter name="password" value="admin" />
 	<parameter name="password" value="admin" />
@@ -13,29 +15,23 @@
 
 	<test thread-count="5" name="ChromeTest">
 		<classes>
+			<class name="com.obsquara.testscripts.Base" />
 			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
-			<class name="com.obsquara.testscripts.HomePageTest" />
-			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
-			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
-			<class name="com.obsquara.testscripts.PushNotificationTest" />
-			<class name="com.obsquara.testscripts.SettingTest" />
-			<class name="com.obsquara.testscripts.AdminUserTest" />
-			<class name="com.obsquara.testscripts.ManageUserTest" />
-			<class name="com.obsquara.testscripts.ManageSliderTest" />
 
 		</classes>
 	</test> <!-- Test -->
 	<test thread-count="5" name=" EdgeTest">
 		<classes>
+			<class name="com.obsquara.testscripts.Base" />
 			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
-			<class name="com.obsquara.testscripts.HomePageTest" />
-			<class name="com.obsquara.testscripts.ExpenseCategoryTest" />
-			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
-			<class name="com.obsquara.testscripts.PushNotificationTest" />
-			<class name="com.obsquara.testscripts.SettingTest" />
-			<class name="com.obsquara.testscripts.AdminUserTest" />
-			<class name="com.obsquara.testscripts.ManageUserTest" />
-			<class name="com.obsquara.testscripts.ManageSliderTest" />
+
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="firefox">
+		<classes>
+			<class name="com.obsquara.testscripts.Base" />
+			<class name="com.obsquara.testscripts.LoginPageDemoTest" />
+
 		</classes>
 	</test> <!-- Test -->
 

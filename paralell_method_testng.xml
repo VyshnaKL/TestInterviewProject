@@ -16,7 +16,7 @@
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.obsquara.testscripts.LoginPageDemoPageTest">
+			<class name="com.obsquara.testscripts.LoginPageDemoTest">
 				<methods>
 					<include name="verifyApplicationLoginSuccess" />
 					<include name="verifyLoginCredentialsCaseSensitive" />
@@ -34,7 +34,10 @@
 			</class>
 			<class name="com.obsquara.testscripts.ExpenseCategoryTest">
 				<methods>
-					<include name="verifyToAddNewTitle()" />
+					<include name="verifyToAddNewExpenseCategory" />
+					<include name="verifySearchExpenseCategory()" />
+					<include name="verifyEditExpenseCategory" />
+					<include name="verifyDeleteExpenseCategory()" />
 				</methods>
 			</class>
 

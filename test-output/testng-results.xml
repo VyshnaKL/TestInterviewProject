@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results retried="2" ignored="2" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-27T00:53:22 IST" name="Suite" finished-at="2023-04-27T00:54:14 IST" duration-ms="52074">
+  <suite started-at="2023-05-04T08:33:55 IST" name="Suite" finished-at="2023-05-04T08:34:10 IST" duration-ms="15113">
     <groups>
     </groups>
-    <test started-at="2023-04-27T00:53:22 IST" name="Test" finished-at="2023-04-27T00:54:14 IST" duration-ms="52074">
-      <class name="com.obsquara.testscripts.ManageLocationTest">
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:22 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:24 IST" duration-ms="2552" status="PASS">
+    <test started-at="2023-05-04T08:33:55 IST" name="Test" finished-at="2023-05-04T08:34:10 IST" duration-ms="15113">
+      <class name="com.obsquara.testscripts.AdminUserTest">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:33:55 IST" name="initilizeBrowser" finished-at="2023-05-04T08:33:58 IST" duration-ms="2544" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheAddingNewLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:24 IST" name="verifytheAddingNewLocation" finished-at="2023-04-27T00:53:38 IST" duration-ms="13918" status="PASS">
+        <test-method retried="true" signature="verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:33:58 IST" name="verifySearchAdminUser" finished-at="2023-05-04T08:34:01 IST" duration-ms="3412" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[username not found in table expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: username not found in table expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.obsquara.testscripts.AdminUserTest.verifySearchAdminUser(AdminUserTest.java:76)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifytheAddingNewLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:38 IST" name="browserQuit" finished-at="2023-04-27T00:53:38 IST" duration-ms="353" status="PASS">
+        </test-method> <!-- verifySearchAdminUser -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:01 IST" name="browserQuit" finished-at="2023-05-04T08:34:01 IST" duration-ms="362" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifytheAddingNewLocation status=SUCCESS method=ManageLocationTest.verifytheAddingNewLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
+                <![CDATA[[TestResult name=verifySearchAdminUser status=SKIP method=AdminUserTest.verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:38 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:40 IST" duration-ms="1466" status="PASS">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:01 IST" name="initilizeBrowser" finished-at="2023-05-04T08:34:03 IST" duration-ms="1476" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,22 +85,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheDeleteButtoninManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:40 IST" name="verifytheDeleteButtoninManageLocation" finished-at="2023-04-27T00:53:53 IST" duration-ms="13528" status="PASS">
+        <test-method retried="true" signature="verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:03 IST" name="verifySearchAdminUser" finished-at="2023-05-04T08:34:06 IST" duration-ms="2612" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[username not found in table expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: username not found in table expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.obsquara.testscripts.AdminUserTest.verifySearchAdminUser(AdminUserTest.java:76)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifytheDeleteButtoninManageLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:53 IST" name="browserQuit" finished-at="2023-04-27T00:53:54 IST" duration-ms="328" status="PASS">
+        </test-method> <!-- verifySearchAdminUser -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:06 IST" name="browserQuit" finished-at="2023-05-04T08:34:06 IST" duration-ms="322" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifytheDeleteButtoninManageLocation status=SUCCESS method=ManageLocationTest.verifytheDeleteButtoninManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
+                <![CDATA[[TestResult name=verifySearchAdminUser status=SKIP method=AdminUserTest.verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:54 IST" name="initilizeBrowser" finished-at="2023-04-27T00:53:55 IST" duration-ms="1470" status="PASS">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:06 IST" name="initilizeBrowser" finished-at="2023-05-04T08:34:07 IST" duration-ms="1473" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,22 +152,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifytheSearchManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:53:55 IST" name="verifytheSearchManageLocation" finished-at="2023-04-27T00:54:13 IST" duration-ms="18057" status="PASS">
+        <test-method signature="verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:07 IST" name="verifySearchAdminUser" finished-at="2023-05-04T08:34:10 IST" duration-ms="2403" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[username not found in table expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: username not found in table expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.obsquara.testscripts.AdminUserTest.verifySearchAdminUser(AdminUserTest.java:76)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifytheSearchManageLocation -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40]" started-at="2023-04-27T00:54:13 IST" name="browserQuit" finished-at="2023-04-27T00:54:14 IST" duration-ms="364" status="PASS">
+        </test-method> <!-- verifySearchAdminUser -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762]" started-at="2023-05-04T08:34:10 IST" name="browserQuit" finished-at="2023-05-04T08:34:10 IST" duration-ms="473" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifytheSearchManageLocation status=SUCCESS method=ManageLocationTest.verifytheSearchManageLocation()[pri:0, instance:com.obsquara.testscripts.ManageLocationTest@16414e40] output={null}]]]>
+                <![CDATA[[TestResult name=verifySearchAdminUser status=FAILURE method=AdminUserTest.verifySearchAdminUser()[pri:0, instance:com.obsquara.testscripts.AdminUserTest@66ac5762] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-      </class> <!-- com.obsquara.testscripts.ManageLocationTest -->
+      </class> <!-- com.obsquara.testscripts.AdminUserTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

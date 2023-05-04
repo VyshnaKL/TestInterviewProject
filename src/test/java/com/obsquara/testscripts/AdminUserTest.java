@@ -13,6 +13,7 @@ import com.obsquara.pages.DashBoardMenuList;
 import com.obsquara.pages.LoginSuccess;
 
 import Utilities.ExcelUtility;
+import Utilities.FakerUtility;
 import Utilities.UtilityFile;
 
 public class AdminUserTest extends Base {
@@ -57,7 +58,7 @@ public class AdminUserTest extends Base {
 		assertTrue(adminUserPage.isAlertMessageDisplayed(), "username not deleted successfully");
 
 	}
-	
+
 	@Test(retryAnalyzer = generaltest.Retry.class)
 	public void verifySearchAdminUser() throws IOException, InterruptedException {
 		String searchName = ExcelUtility.getString(0, 0, UtilityFile.excelPath, "AdminUsers");
@@ -68,7 +69,8 @@ public class AdminUserTest extends Base {
 		DashBoardMenuList DashBoardMenuListObj = new DashBoardMenuList(driver);
 		DashBoardMenuListObj.navigateToPages(ExcelUtility.getString(4, 0, UtilityFile.excelPath, "DashBoard"));
 		adminUserPage = new AdminUserPage(driver);
-		adminUserPage.clickonNewUser().enterUserNameField(username).enterPasswordField(password).selectbyDropdownIndex()
+		adminUserPage.clickonNewUser().enterUserNameField(FakerUtility.firstNameFakerSample())
+				.enterPasswordField(FakerUtility.lastNameFakerSample()).selectbyDropdownIndex()
 				.clickonSaveNotification().clickSearchButton();
 		adminUserPage.enterSearchName(searchName).clickRedSearchButton();
 		assertTrue(adminUserPage.checkTitle(searchName), "username not found in table");

@@ -6,6 +6,8 @@
 	</listeners>
 	<test name="ChromeBrowsing">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="Edge" />
+		<parameter name="browser" value="firefox" />
 		<parameter name="username" value="admin" />
 		<parameter name="password" value="admin" />
 		<parameter name="validationMessage" value="Please fill out this field." />
@@ -17,8 +19,8 @@
 			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
 			<class name="com.obsquara.testscripts.PushNotificationTest" />
 			<class name="com.obsquara.testscripts.SettingTest" />
-			<class name="com.obsquara.testscripts.AdminUserTest"/>
-            <class name="com.obsquara.testscripts.ManageUserTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest" />
+			<class name="com.obsquara.testscripts.ManageUserTest" />
 			<class name="com.obsquara.testscripts.ManageSliderTest" />
 		</classes>
 	</test>
@@ -35,8 +37,8 @@
 			<class name="com.obsquara.testscripts.ManageDeliveryBoyTest" />
 			<class name="com.obsquara.testscripts.PushNotificationTest" />
 			<class name="com.obsquara.testscripts.SettingTest" />
-			<class name="com.obsquara.testscripts.AdminUserTest"/>
-            <class name="com.obsquara.testscripts.ManageUserTest" />
+			<class name="com.obsquara.testscripts.AdminUserTest" />
+			<class name="com.obsquara.testscripts.ManageUserTest" />
 			<class name="com.obsquara.testscripts.ManageSliderTest" />
 		</classes>
 	</test> <!-- Test -->
